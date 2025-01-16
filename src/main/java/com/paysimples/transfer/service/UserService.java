@@ -2,6 +2,7 @@ package com.paysimples.transfer.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,5 +46,9 @@ public class UserService {
         merchant.setCnpj(merchantDTO.getCnpj());
         merchant.setMerchant(user);
         return merchantRepository.save(merchant);
+    }
+
+    public List<User> listAllUsers(){
+        return userRepository.findAll();
     }
 }
